@@ -45,10 +45,10 @@ const MyNavbar = ({ payoff }) => {
 
     const handleClick = () => {
         // how to redirect the user via JS?
-        console.log('you clicked me!')
-        setTimeout(() => {
-            navigate(location.pathname === '/' ? '/booking' : '/')
-        }, 3000)
+        console.log('you clicked me!', location)
+        // setTimeout(() => {
+        navigate(location.pathname === '/' ? '/booking' : '/')
+        // }, 3000)
         // programmatically redirect you to a specific route!
 
         // location is an object and will give you some info on where you currently sit
@@ -65,11 +65,15 @@ const MyNavbar = ({ payoff }) => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ml-auto">
-                    <Nav.Link href="#features">Menu</Nav.Link>
+                    <Link to="/menu">
+                        <div className={location.pathname === '/menu' ? 'nav-link active' : 'nav-link'}>Menu</div>
+                    </Link>
                     <Link to="/booking">
                         <div className={location.pathname === '/booking' ? "nav-link active" : "nav-link"}>Booking</div>
                     </Link>
-                    <Nav.Link href="#contact">Contact us!</Nav.Link>
+                    <Link to="/contact">
+                        <div className={location.pathname === '/contact' ? 'nav-link active' : 'nav-link'}>Contact us!</div>
+                    </Link>
                     <Link to="/roberta">
                         <div className="nav-link">Roberta!</div>
                     </Link>

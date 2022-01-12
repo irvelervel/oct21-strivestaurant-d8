@@ -6,12 +6,12 @@ const Booking = () => (
     <Container>
         <Row className="justify-content-center">
             <Col xs={12} md={6}>
-                <ReservationForm />
+                <Reservations />
             </Col>
         </Row>
         <Row className="justify-content-center">
             <Col xs={12} md={6}>
-                <Reservations />
+                <ReservationForm />
             </Col>
         </Row>
     </Container>

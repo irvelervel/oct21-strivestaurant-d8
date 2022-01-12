@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Booking from './components/Booking';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFound from './components/NotFound';
+import MyLayout from './components/MyLayout';
+import Menu from './components/Menu';
 
 // in this case App is the parent component, and MyNavbar is a child
 // you can pass props from a parent to a child
@@ -30,8 +32,16 @@ function App() {
           {/* these pieces of content now are going to be loaded DINAMYCALLY */}
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
+          {/* the section below is using MyLayout for framing the Booking component, */}
+          {/* injecting it in the middle of a Navbar and a footer */}
+          {/* <Route path="/booking" element={
+            <MyLayout>
+              <Booking />
+            </MyLayout>
+          } /> */}
           {/* path is the URL you're loading your components in */}
           {/* and element is the JSX structure you want to load on that path */}
+          <Route path="/menu" element={<Menu />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
