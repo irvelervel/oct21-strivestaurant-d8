@@ -3,8 +3,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import MyNavbar from './components/MyNavbar'
 import Home from './components/Home';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Booking from './components/Booking';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NotFound from './components/NotFound';
 
 // in this case App is the parent component, and MyNavbar is a child
 // you can pass props from a parent to a child
@@ -26,8 +27,12 @@ function App() {
       <div className="App">
         <MyNavbar payoff="We can serve only pasta!" links={['menu', 'booking', 'contact', 'roberta']} />
         <Routes>
+          {/* these pieces of content now are going to be loaded DINAMYCALLY */}
           <Route path="/" element={<Home />} />
           <Route path="/booking" element={<Booking />} />
+          {/* path is the URL you're loading your components in */}
+          {/* and element is the JSX structure you want to load on that path */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>
