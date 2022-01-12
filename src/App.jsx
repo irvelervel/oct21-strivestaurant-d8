@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NotFound from './components/NotFound';
 import MyLayout from './components/MyLayout';
 import Menu from './components/Menu';
+import Details from './components/Details';
 
 // in this case App is the parent component, and MyNavbar is a child
 // you can pass props from a parent to a child
@@ -42,6 +43,7 @@ function App() {
           {/* path is the URL you're loading your components in */}
           {/* and element is the JSX structure you want to load on that path */}
           <Route path="/menu" element={<Menu />} />
+          <Route path="/details/:pastaId" element={<Details />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
